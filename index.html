@@ -1,0 +1,287 @@
+﻿<html lang="es">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Accept-CH" content="Device-Memory">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src='javascript/lan.min.js'></script>
+  <script src="javascript/llamada1.js"></script>
+  <script src="javascript/source.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<br>
+<div class="container">
+  <div class="jumbotron">
+    <h3>Que sabe mi Navegador Web?</h3> 
+    <p>Identificador de usuario por medio de JavaScript</p> 
+  </div>
+</div>
+
+<div class="container">
+	<div class="card-columns">
+             
+        <div class="card">
+            <img class="card-img-top" src="img/sistema.jpg" alt="Sistema"> 
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Dispositivo</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+		      <p>Accediste a este sitio desde un:</p>
+                <div id="dispositivo"></div>
+             <small class="text-muted"></small>
+           </div>
+        </div>
+		
+		<div class="card">
+            <img class="card-img-top" src="img/webapp.png" alt=""> 
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Sistemas</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+		     <p>Sabemos que Tienes: </p>
+			 <table class='table'>
+                 <tr>
+                  <td>Sistema Operativo:</td><td id='os'>N/A</td>
+                 </tr>
+                  <tr>
+                  <td>Navegador Web:</td> <td id='browser'>N/A</td>
+                 </tr>
+                  <tr>
+                  <td>Dispositivo:</td><td id='disp'>N/A</td>
+                 </tr>
+                  <tr>
+                  <td>Arquitectura:</td> <td id='arq'>N/A</td>
+                 </tr>
+                  <tr>
+                  <td>Plugins:</td> <td id='plg'>N/A</td>
+                 </tr>
+                </table>
+             <br><br><small class="text-muted"> Informaci&oacute;n que puede ser usada por un Ciberdelincuente para buscar un vector de ataque a tu dispositivo, tambi&eacute;n  estos datos pueden ser usados para espionaje, perfilamiento de usuario, establecer nivel socio econ&oacute;mico, gustos espec&eacute;ficos en tecnolog&iacute;as seg&uacute;n los plugins utilizados, etc. </small>
+           </div>
+        </div>
+		
+		<div class="card">
+            <img class="card-img-top" src="img/hardware.png" alt=""> 
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Hardware</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+		        <p>Los componentes de tu equipo son: </p>
+                <table class='table'>
+                 <tr>
+                  <td>CPU:</td> <td id='cpu'>N/A</td>
+                 </tr>
+                 <tr>
+                  <td>RAM:</td> <td id='ram'>N/A</td>
+                 </tr>
+                  <tr>
+                  <td>GPU:</td> <td id='gpu'>N/A</td>
+                 </tr>
+                  <tr>
+                  <td>Pantalla:</td> <td id='pant'>N/A</td>
+                 </tr>
+                </table>
+                <canvas id="glcanvas" width="1" height="1"></canvas>
+             <br><br><small class="text-muted">Informaci&oacute;n utilizada muchas veces para utilizar tu navegador web para minar criptomonedas, ya que para realizar esta tarea sin afectar al usuario se necesita mucha capacidad de procesamiento.</small>
+           </div>
+        </div>
+		
+		<div class="card">
+            <img class="card-img-top" src="img/bateria.jpg" width='100px' height='210px' alt=""> 
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Bateria</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+		     <table class='table'>
+                 <tr>
+                  <td>Conectado Cargador:</td> <td id='estadobateria'>No Soportado.</td>
+                 </tr>
+                  <tr>
+                  <td>Nivel Bateria:</td> <td id='nivelbateria'>No Soportado.</td>
+                 </tr>
+                  <tr>
+                  <td>Tiempo de Carga:</td><td id='tiempocarga'>No Soportado.</td>
+                 </tr>
+                  <tr>
+                  <td>Tiempo De Bateria:</td> <td id='tiempodescarga'>No Soportado.</td>
+                 </tr>
+                </table>
+             <br><br><small class="text-muted">Explicaci&oacute;n: Esta informaci&oacute;n podr&iacute;a servir para determinar si el usuario tiene el cargador conectado y con esto saber si est&aacute; en un hogar, oficina o cualquier lugar con energ&iacute;a disponible, tambi&eacute;n se podr&iacute;a saber usado para planear un ataque y ver cu&aacute;nto tiempo se tiene disponible antes que se acabe la bater&iacute;a.</small>
+           </div>
+        </div>
+        
+		<div class="card">
+            <!--<img class="card-img-top" src="img/vibracion.jpg" width='100px' height='210px' alt=""> -->
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Vibraci&oacute;n</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+		     <p>Se puede controlar la vibraci&oacute;n del dispositivo a voluntad: </p>
+               <div id='msj'> </div>
+               <button type="button" class="btn btn-default" onclick="vibrate()">Controlar Vibraci&oacute;n</button><br><br>
+             <br><br><small class="text-muted">Explicaci&oacute;n: Al tener acceso a la vibraci&oacute;n del tel&eacute;fono, no solamente sirve para hacer m&aacute;s interactiva las aplicaciones, tambi&eacute;n se podr&iacute;a usar para hacer ataques molestos, sin sentido, o solamente para agotar la bater&iacute;a del usuario.</small>
+           </div>
+        </div>
+		
+		<div class="card">
+            <img class="card-img-top" src="img/social.png" width='100px' height='210px' alt=""> 
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Redes Sociales</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+		    <p>Sabemos que tienes cuenta en: </p>
+               <div id='socialMedia'>No Soportado. </div>
+             <br><br><small class="text-muted">Explicaci&oacute;n: al Saber que redes sociales est&aacute; registrado un usuario, se podr&iacute;a determinar los gustos de este, tambi&eacute;n se podr&iacute;a armar un perfil de usuario, gustos, edad aproximada seg&uacute;n sus redes sociales, nivel de conocimientos inform&aacute;ticos, etc.</small>
+           </div>
+        </div>
+
+		<div class="card">
+            <!-- <img class="card-img-top" src="img/ubicacion.jpg" width='100px' height='210px' alt="">  -->
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Ubicaci&oacute;n</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+		     <p>Sabemos que podrias estar cerca de: </p>
+               <div id='location'> </div>
+               <br><br><small class="text-muted">Explicaci&oacute;n: La Geo ubicaci&oacute;n de un usuario es informaci&oacute;n privada, que se necesita autorizaci&oacute;n previa del usuario para acceder a esta, cabe señalar que la informaci&oacute;n recogida por un sitio web podr&iacute;a ser usada para espionaje, conocer ubicaci&oacute;n de un objetivo, lugares favoritos, etc. Si bien es cierto, que la API de Google no permite acceder a la ubicaci&oacute;n exacta, este hace una triangulaci&oacute;n bastante buena y se podr&iacute;a de igual manera saber su lugar de residencia con un poco m&aacute;s de esfuerzo.<br><br><b>Nota:</b> A veces se acerca a la ubicaci&oacute;n otras veces la distancia es de kil&oacute;metros. </small>
+			   
+           </div>
+        </div>
+		
+		<div class="card">
+            <!-- <img class="card-img-top" src="img/giro.jpg" width='100px' height='200px' alt="">  -->
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Sensores</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+              <iframe src="comp.html" width="320" height="350" frameBorder="0" allowfullscreen></iframe>
+             <br><br><small class="text-muted">Explicaci&oacute;n: Este tipo de sensores no solo sirven para ver lindas fotos panor&aacute;micas, tambi&eacute;n sirven para ver donde est&aacute; ubicado el usuario, si tiene el tel&eacute;fono en el bolsillo, encima de una mesa o tiene el tel&eacute;fono en sus manos.</small>
+           </div>
+        </div>
+
+		<div class="card">
+            <img class="card-img-top" src="img/brillo.png" width='100px' height='210px' alt=""> 
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Nivel de Luz</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+		     <div>Iluminaci&oacute;n :<div id="luz">No Soportado!</div></div>
+             <br><br><small class="text-muted">Explicaci&oacute;n: Con los sensores de iluminaci&oacute;n que traen algunos tel&eacute;fonos se podr&iacute;a saber si el usuario est&aacute; dentro de un cuarto, oficina o al aire libre por su nivel de luz. Si esta informaci&oacute;n la mezclamos con la informaci&oacute;n de la bater&iacute;a y con la geo localizaci&oacute;n, se podr&iacute;a tener certeza si est&aacute; el usuario al aire libre o dentro de una casa.</small>
+           </div>
+        </div>
+
+		<div class="card">
+            <img class="card-img-top" src="img/red.png" width='100px' height='210px' alt=""> 
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Informaci&oacute;n Red</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+		     	     <table class='table' >
+			   <tr>
+			    <td>IP LAN:</td>  <td id='ipinterna'></td>
+			   </tr>
+			   	<tr>
+			    <td>IP WAN:</td>  <td id='ipexterna'></td>
+			   </tr>
+			   <tr>
+			    <td>Velocidad Descarga:</td>  <td id='velred'></td>
+			   </tr>
+			   <tr>
+			    <td>Tipo de Red:</td>  <td id='tecred'>No Soportado!</td>
+			   </tr>
+			   	<tr>
+				<td>ISP:</td>  <td id='isp'></td>
+			   </tr>
+			   	<tr>
+			    <td>Organizai&oacute;n:</td>  <td id='org'></td>
+			   </tr>
+			   	<tr>
+			    <td>Pa&iacute;s:</td>  <td id='pais'></td>
+			   </tr>
+			   	<tr>
+			    <td>Ciudad:</td>  <td id='ciudad'></td>
+			   </tr>
+			 </table>
+             <br><br><small class="text-muted">Esta informaci&oacute;n es &uacute;til tanto para un Ciber delincuente, como para espionaje o ingenier&iacute;a social, en los datos entregados p򢬩camente se encuentra, la IP interna que demuestra desde que red se est&aacute; accediendo, la IP p&uacute;blica que indica pa&iacute;s, compañ&iacute;a a la que est&aacute; asociado el usuario, su velocidad de internet y en algunos casos dependiendo del navegador, si est&aacute; usando red 2G, 3G,4G Wifi o Red Ethernet.</small>
+           </div>
+        </div>
+		<div class="card">
+            <img class="card-img-top" src="img/redlan.png" alt=""> 
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Escaner de Red LAN</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+	         <iframe src="dashboard.html" width="330" height="200" frameBorder="0" allowfullscreen></iframe>
+             <br><br><small class="text-muted">Explicaci&oacute;n: HTML5 tiene nuevas funcionalidades que permiten realizar escaneos de red LAN para identificar equipos en la misma red, cabe señalar que esta t&eacute;cnica falla algunas veces y no se encuentran dispositivos conectados, lo que no significa, que no sea de ayuda para un atacante o un espia.</small>
+           </div>
+        </div>
+		<div class="card">
+            <img class="card-img-top" src="img/redwan.png" alt=""> 
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Escaner de Red WAN</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+		     <iframe src="scanner.html" width="330" height="500" frameBorder="0" allowfullscreen></iframe>
+             <small class="text-muted">Explicaci&oacute;n: Esta prueba de Concepto demuestra que un Ciber delincuente podr&iacute;a utilizar el browser de un cliente para realizar ataques de forma remota y esconder su rastro. </small>
+           </div>
+        </div>
+		<div class="card">
+		 <img class="card-img-top" src="img/importante.jpg" alt=""> 
+           <div class="card-block">
+            <a href="" title="">
+              <h4 class="card-title px-2">Aclaraci&oacute;n</h4>
+            </a>
+             <p class="card-text px-2"></p>
+           </div>
+           <div class="card-footer">
+            <br><br> <small class="text-muted">Esta es una prueba de concepto para concientizar a los usuarios la importancia de la privacidad de los datos y el nivel de exposici&oacute;n que actualmente existe en internet, cabe señalar que recomendamos tomar las medidas necesarias, para evitar la fuga de informaci&oacuten y aplicar medidas mitigatorias, como por ejemplo desactivar JavaScript y otros complementos del navegador web.
+Para finalizar, aclaramos que los datos expuestos en esta aplicaci&oacute;n, solamente son vistos por el usuario y NO GUARDAMOS NINGUN DATO, ya que esta prueba de concepto se ejecuta en el lado del cliente.
+</small>
+           </div>
+        </div>
+		
+    </div>
+</div>
+<br>
+<br>
+<footer class="container-fluid text-center bg-lightgray">
+
+        <div class="copyrights" style="margin-top:25px;">
+            <p>Chile-2018, sveliz
+        </div>
+</footer>

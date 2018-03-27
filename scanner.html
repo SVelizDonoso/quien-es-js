@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<body>
+  <label>
+    <div>Escanear Red </div>
+    <div>
+      <textarea rows=10 cols=30 id='h'>www.backtrackacademy.com
+192.168.1.1
+      </textarea>
+    </div>
+  </label>
+  <button type="button" class="btn btn-default" onclick="scan()">Escanear</button>
+ 
+
+  <div id='c' style='background:#000; color: #fff; font-family:monospace; padding: 5px; margin-top:0; display: none;'>
+  </div>
+
+
+<script src='javascript/src/utils.js'></script>
+<script src='javascript/src/db.js'></script>
+<script src='javascript/src/host_scan.js'></script>
+<script src='javascript/src/device_scan.js'></script>
+
+<script>
+  function log(s) {
+    c.innerHTML += '<div>'+s+'</div>';
+  }
+
+  function scan() {
+    c.innerHTML = '';
+    //b.style.display = 'none';
+    c.style.display = 'block';
+    log('Escaneando...');
+    lan.DeviceScan.start(h.value.trim().split(/\s+/), {
+      found: function(address, fingerprint) {
+        log("["+address+"] Dispositivo: "+fingerprint);
+      },
+      complete: function(results) {
+        log("Scan complete.")
+      },
+      hostup: function(address) {
+        log("Host Up: "+address);
+      },
+      hostdown: function(address) {
+        log("Host down: "+address);
+      }
+    });
+
+    
+  }
+  </script>
+</body>
+</html>

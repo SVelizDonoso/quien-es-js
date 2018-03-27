@@ -1,0 +1,84 @@
+
+<style>
+.compass {
+	position: relative;
+	width: 230px;
+	height: 230px;
+	margin: 10px auto;
+	background: #222;
+	padding: 0px;
+	border-radius: 40px;
+	border: 5px solid #444;
+	overflow: hidden;
+}
+
+.compass .disc {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 200;
+	background: url('http://dev.rvltn.eu/compass/compass.svg');
+	width: 230px;
+	height: 230px;
+	background-size: 100%;
+}
+
+.compass .arrow {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+	background: url('http://dev.rvltn.eu/compass/arrow.svg');
+	width: 230px;
+	height: 230px;
+	background-size: 100%;
+}
+</style>
+<script>
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+if (window.DeviceOrientationEvent) {
+  document.getElementById("notice").innerHTML = "No se soporta la API de Orientaci&oacute;n!";
+  window.addEventListener('deviceorientation', function(eventData) {
+  
+    var tiltLR = eventData.gamma;
+
+    var tiltFB = eventData.beta;
+
+    var dir = eventData.alpha
+
+
+    deviceOrientationHandler(tiltLR, tiltFB, dir);
+  }, false);
+} else {
+  document.getElementById("notice").innerHTML = "Helaas. De DeviceOrientationEvent API word niet door dit toestel ondersteund."
+};
+
+    function deviceOrientationHandler(tiltLR, tiltFB, dir) {
+      document.getElementById("tiltLR").innerHTML = Math.ceil(tiltLR);
+      document.getElementById("tiltFB").innerHTML = Math.ceil(tiltFB);
+      document.getElementById("direction").innerHTML = Math.ceil(dir);
+
+      var compassDisc = document.getElementById("compassDiscImg");
+      compassDisc.style.webkitTransform = "rotate("+ dir +"deg)";
+      compassDisc.style.MozTransform = "rotate("+ dir +"deg)";
+      compassDisc.style.transform = "rotate("+ dir +"deg)";
+    }
+
+});
+
+</script>
+
+	<div id="notice"></div>
+
+	<div class="compass">
+		<div class="arrow"></div>
+		<div class="disc" id="compassDiscImg"></div>
+	</div>
+
+	<div class="orientation-data">
+		        <div>Frontal: <span id="tiltFB">No Soportado.</span></div>
+		        <div>Derecha-Izquierda: <span id="tiltLR">No Soportado.</span></div>
+		        <div>Direcci&oacute;n: <span id="direction">No Soportado.</span></div>
+	</div>
